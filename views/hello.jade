@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/style.css")
+    body
+        h2 Welcome to Home Page
+        form(action="/" method="POST")
+            input(type="text" placeholder="Enter student name" name="name")
+            input(type="text" placeholder="Enter student age" name="age")
+            input(type="submit" value="Save")
+        p.error #{errorMsg}
+        p.success #{successMsg}
+
+        h2 Student List
+        ul
+            - for(let i=0;i<studentList.length;i++){
+                li Name:#{studentList[i].name} Age:#{studentList[i].age}
+            - }
+
